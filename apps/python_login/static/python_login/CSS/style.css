@@ -1,0 +1,119 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  /*font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;*/
+}
+
+/*#dt{text-indent: -500px;height:25px; width:200px;}*/
+
+body {
+    padding: 40px;
+}
+
+#wrapper {
+  width: 980px;
+  margin: 0 auto;
+}
+
+.left-side {
+  width: 50%;
+  height: 720px;
+  border-radius: 10px;
+  margin-top: 5px;
+  background: linear-gradient(#EAE7E7, white 40%);
+  display: inline-block;
+  padding: 10px;
+}
+
+.right-side {
+  width: 30%;
+  height: 700px;
+  border-radius: 10px;
+  margin: 5px 0 0 150px;
+  background: linear-gradient(#EAE7E7, white 40%);
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+}
+
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    /*background-color: #4CAF50;*/
+    background-color: #19b9e7;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.signupbtn {
+    border-radius: 5px;
+    float: left;
+    width: 30%;
+}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+}
+
+h1 {
+  margin-left: 80px;
+}
+
+h3 {
+  margin-left: 20px;
+}
+
+#content {
+  width: 1000px;
+  height:90px;
+  border-radius: 10px;
+  margin-top: 5px;
+  background: linear-gradient(#EAE7E7, white 40%);
+  display: inline-block;
+  padding: 10px;
+}
+
+.messages {
+  color: red;
+}
+
+ul, li {
+  margin-left: 20px;
+  list-style-type: none
+}

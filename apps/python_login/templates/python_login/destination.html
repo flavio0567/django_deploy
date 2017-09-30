@@ -1,0 +1,31 @@
+{% extends 'python_login/index.html' %}
+
+{% block title %}Destination{% endblock title %}
+
+{% block context %}
+{% include 'python_login/head_css.html'%}
+{% include 'python_login/navbar.html' %}
+
+<article>
+  {% if travel %}
+    <ul>
+        <h2> {{ travel.destination }} </h2>
+        <li><b>Planned By:</b> {{ user.name }}</li>
+        <li><b>Description:</b> {{ travel.description }}</li>
+        <li><b>Travel Date From:</b> {{ travel.travel_dt_from}}</li>
+        <li><b>Travel Date To:</b> {{ travel.travel_dt_to }}</li>
+    </ul>
+  {% endif %}
+
+  <h3> Other user's joining the trip: </h3>
+  {% if users %}
+    <ul>
+        {% for user in users %}
+          <li>{{ user.name }}</li>
+        {% endfor %}
+    </ul>
+  {% endif %}
+
+</article>
+
+{% endblock context %}

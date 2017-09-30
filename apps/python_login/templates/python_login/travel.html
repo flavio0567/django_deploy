@@ -1,0 +1,66 @@
+{% extends 'python_login/index.html' %}
+
+{% block title %}Travel Dashboard{% endblock title %}
+
+{% block context %}
+{% include 'python_login/head_css.html'%}
+{% include 'python_login/navbar.html' %}
+
+      {% if user %}
+        <h1>Hello, {{ user.name }}</h1>
+      {% endif %}
+      <hr>
+      <h4>Your Trip Schedules</h4>
+      <table class="table table-striped table-hover ">
+          <tr>
+              <th><p>Destination</p></th>
+              <th><p>Travel Start Date</p></th>
+              <th><p>Travel End Date</p></th>
+              <th><p>Plan</p></th>
+          </tr>
+          {% if travels_user %}
+              {% for travel in travels_user %}
+              <tr>
+                  <td class="col-md-1"><a href="/travels/destination/{{ travel.id }}">{{ travel.destination }}</a></td>
+                  <td class="col-md-2">{{ travel.travel_dt_from }}</td>
+                  <td class="col-md-3">{{ travel.travel_dt_to }}</td>
+                  <td class="col-md-4">{{ travel.description }}</td>
+              </tr>
+              {% endfor %}
+          {% endif %}
+          {% if travels_join %}
+              {% for travel in travels_join %}
+              <tr>
+                  <td class="col-md-1"><a href="/travels/destination/{{ travel.id }}">{{ travel.destination }}</a></td>
+                  <td class="col-md-2">{{ travel.travel_dt_from }}</td>
+                  <td class="col-md-3">{{ travel.travel_dt_to }}</td>
+                  <td class="col-md-4">{{ travel.description }}</td>
+              </tr>
+              {% endfor %}
+          {% endif %}
+      </table>
+
+      <h4>Other user's Travel Plans</h4>
+      <table class="table table-striped table-hover ">
+          <tr>
+              <th><p>Name</p></th>
+              <th><p>Destination</p></th>
+              <th><p>Travel Start Date</p></th>
+              <th><p>Travel End Date</p></th>
+              <th><p>Do You Want to Join?</p></th>
+          </tr>
+          {% if travels_others %}
+              {% for travel in travels_others %}
+              <tr>
+                  <td class="col-md-1">{{ travel.created_by.name }}</td>
+                  <td class="col-md-2"><a href="/travels/destination/{{ travel.id }}">{{ travel.destination }}</a></td>
+                  <td class="col-md-3">{{ travel.travel_dt_from }}</td>
+                  <td class="col-md-4">{{ travel.travel_dt_to }}</td>
+                  <td class="col-md-5"><a href="/travels/join/{{ travel.id }}">JOIN</a></td>
+              </tr>
+              {% endfor %}
+          {% endif %}
+      </table>
+      <a href="/travels/add">Add Travel Plan</a>
+
+{% endblock context %}
